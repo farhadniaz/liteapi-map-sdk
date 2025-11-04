@@ -1,0 +1,74 @@
+{
+  "name": "liteapi-map-sdk-core",
+  "version": "1.0.0",
+  "description": "JavaScript SDK for embedding interactive maps with LiteAPI hotel pricing data. Built with provider-agnostic architecture..",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./core.css": "./dist/core.css"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run build:vite && npm run build:types",
+    "build:vite": "vite build",
+    "build:types": "tsc --project tsconfig.build.json",
+    "prepublishOnly": "npm run test && npm run build",
+    "preview": "vite preview",
+    "test": "node --experimental-vm-modules $(npm root)/.bin/jest",
+    "test:watch": "node --experimental-vm-modules $(npm root)/.bin/jest --watch",
+    "test:coverage": "node --experimental-vm-modules $(npm root)/.bin/jest --coverage"
+  },
+  "keywords": [
+    "liteapi",
+    "map",
+    "mapbox",
+    "hotels",
+    "pricing",
+    "sdk",
+    "javascript",
+    "typescript",
+    "travel",
+    "booking"
+  ],
+  "author": "LiteAPI",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/farhadniaz/liteapi-map-sdk",
+    "directory": "packages/core"
+  },
+  "bugs": {
+    "url": "https://github.com/farhadniaz/liteapi-map-sdk/issues"
+  },
+  "homepage": "https://github.com/farhadniaz/liteapi-map-sdk/tree/main/packages/core#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "mapbox-gl": "^3.0.0"
+  },
+  "devDependencies": {
+    "@jest/globals": "^30.2.0",
+    "@types/jest": "^30.0.0",
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0",
+    "mapbox-gl": "^3.16.0",
+    "node-fetch": "^3.3.2",
+    "ts-jest": "^29.4.5",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.7",
+    "vite-plugin-css-injected-by-js": "^3.5.2"
+  }
+}

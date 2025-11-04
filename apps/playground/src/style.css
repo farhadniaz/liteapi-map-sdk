@@ -1,0 +1,176 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #f5f5f5;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Spacing variables */
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 20px;
+  --spacing-xl: 24px;
+
+  /* Map height variables */
+  --map-height-mobile: 300px;
+  --map-height-tablet: 350px;
+  --map-height-desktop: 400px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  font-family: system-ui, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.header {
+  padding: 12px;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-title {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.header-subtitle {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.maps-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.map-card {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+}
+
+.map-card-header {
+  padding: var(--spacing-md);
+  color: white;
+  font-weight: bold;
+  font-size: 0.95rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.map-card-paris .map-card-header {
+  background: #4a90e2;
+}
+
+.map-card-dubai .map-card-header {
+  background: #e2a44a;
+}
+
+.map-card-newyork .map-card-header {
+  background: #4ae28a;
+}
+
+.map-instance {
+  width: 100%;
+  height: var(--map-height-mobile);
+  position: relative;
+}
+
+.custom-marker {
+  display: inline-block;
+  background-color: #ffffff;
+  border: 2px solid #4a90e2;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.custom-marker:hover {
+  background-color: #4a90e2;
+  color: #ffffff;
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Marker Container */
+.custom-marker-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Weather Control Widget */
+.weather-control {
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+}
+
+.weather-widget {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 8px;
+  min-width: 100px;
+}
+
+.weather-icon {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.weather-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.weather-temp {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ff6b35;
+  line-height: 1;
+}
+
+.weather-desc {
+  font-size: 11px;
+  color: #666;
+  text-transform: capitalize;
+  line-height: 1.2;
+}
+
+.weather-city {
+  font-size: 10px;
+  color: #999;
+  line-height: 1;
+}

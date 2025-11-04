@@ -1,0 +1,55 @@
+name: Publish to NPM
+
+on:
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          registry-url: "https://registry.npmjs.org"
+      - run: yarn install --frozen-lockfile && yarn build && yarn test
+        working-directory: packages/core
+      - run: npm publish --access public
+        working-directory: packages/core
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Get package version
+        id: version
+        run: echo "version=$(node -p "require('./package.json').version")" >> $GITHUB_OUTPUT
+        working-directory: packages/core
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ steps.version.outputs.version }}
+          name: v${{ steps.version.outputs.version }}
+          body: |
+            ## NPM Package Published
+
+            **Version:** ${{ steps.version.outputs.version }}
+            **Package:** liteapi-map-sdk-core
+
+            ### Installation
+            ```bash
+            npm install liteapi-map-sdk-core@${{ steps.version.outputs.version }}
+            ```
+
+            See [CHANGELOG](https://github.com/${{ github.repository }}/commits/v${{ steps.version.outputs.version }}) for details.
+          draft: false
+          prerelease: false
+
+      - run: sleep 60
+
+      - run: curl -X POST ${{ secrets.VERCEL_DEPLOY_HOOK_BFF }}
+        if: success()
+
+      - run: curl -X POST ${{ secrets.VERCEL_DEPLOY_HOOK_PLAYGROUND }}
+        if: success()
