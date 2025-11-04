@@ -1,0 +1,25 @@
+# Source files
+src/
+
+# Test files
+**/__tests__/
+**/*.test.ts
+jest.config.js
+jest.setup.js
+
+# Build config
+tsconfig.json
+tsconfig.build.json
+vite.config.ts
+
+# Development
+node_modules/
+.vscode/
+.idea/
+
+# Misc
+*.log
+.DS_Store
+.env
+.env.local
+respone.json

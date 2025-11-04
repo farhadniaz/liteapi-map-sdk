@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LiteAPI Map SDK - Multiple Instances Demo</title>
+  </head>
+  <body>
+    <div class="header">
+      <h1 class="header-title">
+        LiteAPI Map SDK Demo <span id="version"></span>
+      </h1>
+      <p class="header-subtitle">Multiple map instances on the same page</p>
+    </div>
+
+    <div class="maps-container">
+      <div class="map-card map-card-paris">
+        <div class="map-card-header">
+          Paris - Pattern 1: Auto-Load
+          <div>
+            <button onclick="window.maps.mapParis.toggleHeatmap()">
+              Toggle Heatmap
+            </button>
+            <button onclick="window.maps.mapParis.toggleWeatherLayer(false)">
+              Hide Weather
+            </button>
+          </div>
+        </div>
+        <div id="map-paris" class="map-instance"></div>
+      </div>
+
+      <div class="map-card map-card-dubai">
+        <div class="map-card-header">
+          Dubai - Pattern 2: Manual loadHotels()
+          <button onclick="window.maps.mapDubai.toggleHeatmap()">
+            Heatmap
+          </button>
+        </div>
+        <div id="map-dubai" class="map-instance"></div>
+      </div>
+
+      <div class="map-card map-card-newyork">
+        <div class="map-card-header">
+          New York - Pattern 1: Auto-Load
+          <button onclick="window.maps.mapNewYork.toggleHeatmap()">
+            Heatmap
+          </button>
+          <button onclick=" window.maps.mapNewYorkLoadHotels()">
+            Load Manually
+          </button>
+        </div>
+        <div id="map-newyork" class="map-instance"></div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
