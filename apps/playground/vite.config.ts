@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => {
       alias: isDev
         ? {
             // In development: use local source code for hot reload and instant updates
-            "liteapi-map-sdk-core": resolve(
+            "liteapi-map-core-sdk": resolve(
               __dirname,
               "../../packages/core/src/index.ts"
             ),

@@ -71,7 +71,7 @@ A timed callback also demonstrates `loadWeather` + `toggleWeatherLayer` for the 
 - **Weather test:** ensure `OPENWEATHER_API_KEY` is configured in the BFF, then keep or remove the weather timeout block.
 - **Styling:** update `src/style.css` if you want to tweak layout or marker appearance (the SDK injects its own control styling; this file covers framing).
 
-During `yarn dev` the Vite config aliases `liteapi-map-sdk-core` to the local source (`packages/core/src/index.ts`) for instant feedback. Production builds fall back to the version installed from npm. Remember to keep the playground’s dependency on the local package up to date if you iterate on the core SDK (`yarn build` in `packages/core`, then restart the playground).
+During `yarn dev` the Vite config aliases `liteapi-map-core-sdk` to the local source (`packages/core/src/index.ts`) for instant feedback. Production builds fall back to the version installed from npm. Remember to keep the playground’s dependency on the local package up to date if you iterate on the core SDK (`yarn build` in `packages/core`, then restart the playground).
 
 ## Troubleshooting
 

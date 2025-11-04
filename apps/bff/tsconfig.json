@@ -20,7 +20,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "liteapi-map-sdk-core": ["../../packages/core/src/index.ts"]
+      "liteapi-map-core-sdk": ["../../packages/core/src/index.ts"]
     }
   },
   "include": ["src"],

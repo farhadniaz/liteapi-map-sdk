@@ -35,11 +35,11 @@ jobs:
             ## NPM Package Published
 
             **Version:** ${{ steps.version.outputs.version }}
-            **Package:** liteapi-map-sdk-core
+            **Package:** liteapi-map-core-sdk
 
             ### Installation
             ```bash
-            npm install liteapi-map-sdk-core@${{ steps.version.outputs.version }}
+            npm install liteapi-map-core-sdk@${{ steps.version.outputs.version }}
             ```
 
             See [CHANGELOG](https://github.com/${{ github.repository }}/commits/v${{ steps.version.outputs.version }}) for details.

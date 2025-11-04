@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "liteapi-map-sdk-core": "^1.0.0",
+    "liteapi-map-core-sdk": "^1.0.0",
     "mapbox-gl": "^3.16.0"
   },
   "devDependencies": {

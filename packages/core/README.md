@@ -23,9 +23,9 @@ LiteAPI Map SDK core exposes the developer-facing API for embedding the LiteAPI 
 Install the package (peer dependencies declared in `package.json` must also be satisfied):
 
 ```bash
-npm install liteapi-map-sdk-core
+npm install liteapi-map-core-sdk
 # or
-yarn add liteapi-map-sdk-core
+yarn add liteapi-map-core-sdk
 ```
 
 ## Quick start
@@ -39,7 +39,7 @@ yarn add liteapi-map-sdk-core
 2. Initialize the SDK from your application code:
 
 ```ts
-import LiteAPI from "liteapi-map-sdk-core";
+import LiteAPI from "liteapi-map-core-sdk";
 
 const hotelsQuery = {
   placeId: "ChIJOwg_06VPwokRYv534QaPC8g", // New York

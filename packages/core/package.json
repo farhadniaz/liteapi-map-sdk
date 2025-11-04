@@ -1,5 +1,5 @@
 {
-  "name": "liteapi-map-sdk-core",
+  "name": "liteapi-map-core-sdk",
   "version": "1.0.0",
   "description": "JavaScript SDK for embedding interactive maps with LiteAPI hotel pricing data. Built with provider-agnostic architecture..",
   "type": "module",

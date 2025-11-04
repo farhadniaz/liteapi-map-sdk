@@ -1,5 +1,5 @@
 import "./style.css";
-import LiteAPI from "liteapi-map-sdk-core";
+import LiteAPI from "liteapi-map-core-sdk";
 
 const PROXY_BASE_URL = import.meta.env.VITE_PROXY_BASE_URL;
 
