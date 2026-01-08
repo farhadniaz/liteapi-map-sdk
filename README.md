@@ -15,10 +15,10 @@
 
 ## Quick Start
 
-Install the SDK:
+Install the SDK :
 
 ```bash
-npm install liteapi-map-core-sdk
+npm install liteapi-map-core-sdk 
 # or
 yarn add liteapi-map-core-sdk
 ```
